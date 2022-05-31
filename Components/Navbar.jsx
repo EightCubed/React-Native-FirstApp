@@ -1,9 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform, StatusBar } from 'react-native';
 
 const Navbar = () => {
     return (
-        <View style={styles.Navbar}>
-            <Text>123</Text>
+        <View>
+            <View style={styles.Top} />
+            <View style={styles.Navbar}>
+                <Image 
+                    source={{uri : "https://picsum.photos/20/30" ,width : 20, height : 20}}
+                    style={{paddingLeft : 10 }}
+                />
+                <Text>123</Text>
+            </View>
         </View>
     );
 }
@@ -11,10 +18,16 @@ const Navbar = () => {
 export default Navbar;
 
 const styles = StyleSheet.create({
+    Top: {
+      flex: 0,
+      paddingTop: Platform.OS==='android' ? StatusBar.currentHeight : 0,
+    },
     Navbar: {
-      flex: 1,
-      backgroundColor: '#fff',
+      flex: 0,
+      backgroundColor: 'gray',
       alignItems: 'center',
-      justifyContent: 'center',
+      flexDirection: 'row',
+      width: '100%',
+      height: 40,
     },
   });

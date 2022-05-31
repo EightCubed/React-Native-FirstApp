@@ -1,16 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import Navbar from './Components/Navbar';
 
 export default function App() {
 
-  let x=1;
+  console.log(Dimensions.get("screen"))
 
   return (
     <View style={styles.container}>
-      {/* <Navbar /> */}
+      <Navbar />
       <Text>Hello World!</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
@@ -18,8 +16,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
+    height: '100%',
+    backgroundColor: 'white',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 });
